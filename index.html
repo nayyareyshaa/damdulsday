@@ -24,7 +24,7 @@
       border-radius: 20px;
       max-width: 320px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      animation: fadeIn 5.5s ease;
+      animation: fadeIn 50s ease;
     }
 
     h1 {
@@ -134,9 +134,9 @@ function typeWriter(element, text, speed) {
   typing();
 }
 
-typeWriter(document.getElementById("typingTitle"), titleText, 25);
+typeWriter(document.getElementById("typingTitle"), titleText, 150);
 setTimeout(() => {
-  typeWriter(document.getElementById("typingText"), bodyText, 25);
+  typeWriter(document.getElementById("typingText"), bodyText, 150);
 }, 1800);
 
     });
@@ -145,5 +145,6 @@ setTimeout(() => {
 </body>
 
 </html>
+
 
 
