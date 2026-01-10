@@ -122,17 +122,6 @@
           Aku utak atik ini dan baru beres nih di jam 3.00 HEHEHEHE
           I love you a lot sayang.<br> Hope u can feel my love from every breath u take.
          `;
-function typeWriter(element, text, speed) {
-  let i = 0;
-  function typing() {
-    if (i < text.length) {
-      element.innerHTML += text[i] === "\n" ? "<br>" : text[i];
-      i++;
-      setTimeout(typing, speed);
-    }
-  }
-  typing();
-}
 
 typeWriter(document.getElementById("typingTitle"), titleText, 150);
 setTimeout(() => {
@@ -145,6 +134,7 @@ setTimeout(() => {
 </body>
 
 </html>
+
 
 
 
