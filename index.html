@@ -66,8 +66,8 @@
 <body>
 
   <div class="card" id="card">
-    <h1>For Adam 💙</h1>
-    <p>Buat kamu 🤍<br>Klik pelan-pelan ya</p>
+    <h1 id="title">For Adam 💙</h1>
+    <p id="content">Buat kamu 🤍<br>Klik pelan-pelan ya</p>
     <button id="nextBtn">Klik</button>
   </div>
 
@@ -76,7 +76,8 @@
   </audio>
 
   <script>
-    const card = document.getElementById("card");
+    const title = document.getElementById("title");
+    const content = document.getElementById("content");
     const btn = document.getElementById("nextBtn");
     const music = document.getElementById("music");
 
@@ -85,32 +86,26 @@
     btn.addEventListener("click", () => {
       if (step === 0) {
         music.play();
-        card.innerHTML = `
-          <h1>Happy Birthday Sayangku 🤍</h1>
-          <p>(klik lagi ya)</p>
-          <button id="nextBtn">Klik</button>
-        `;
+        title.textContent = "Happy Birthday Sayangku 🤍";
+        content.textContent = "(klik lagi ya)";
       }
 
       else if (step === 1) {
-        card.innerHTML = `
-          <p>
+        content.textContent = `
 Semoga hari ini dan hari-hari setelahnya
 selalu penuh bahagia, tawa, dan cinta.
 I'll never change all my colors for u.
 Aku buat ini di hari Minggu 11 Januari,
 maaf ya aku boong udah bobo padahal belum..
-Aku utak atik ini dan baru beres jam 3.00 HEHEHE
+Aku utak-atik ini dan baru beres jam 3.00 HEHEHE
 I love you a lot sayang.
 Hope u can feel my love from every breath u take.
-          </p>
-          <button id="nextBtn">Klik</button>
         `;
       }
 
       else if (step === 2) {
-        card.innerHTML = `
-          <h1>Our Memories 🤍</h1>
+        title.textContent = "Our Memories 🤍";
+        content.innerHTML = `
           <div class="gallery">
             <img src="foto1.jpg" class="foto">
             <img src="foto2.jpg" class="foto">
@@ -120,11 +115,11 @@ Hope u can feel my love from every breath u take.
             <img src="foto6.jpg" class="foto">
           </div>
         `;
+        btn.style.display = "none";
       }
 
       step++;
     });
   </script>
 
-</body>
-</html>
+</bo
