@@ -194,11 +194,14 @@ h1 {
 "Once again, happy birthday 🤍\n" +
 "I love you.";
        
-       releaseFlowers();
-  btn.textContent = "🤍";
-btn.disabled = true;
-btn.style.opacity = "0.6";
+      
+  releaseFlowers();
+  btn.textContent = "klik lagi 🤍";
+}
 
+else if (step === 4) {
+  releaseFlowers();
+  btn.style.display = "none";
 }
 
       step++;
@@ -207,6 +210,7 @@ btn.style.opacity = "0.6";
 
 </body>
 </html>
+
 
 
 
