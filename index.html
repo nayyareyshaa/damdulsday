@@ -124,7 +124,7 @@ h1 {
   </audio>
 
   <script>
-    <script>
+    
   const title = document.getElementById("title");
   const text = document.getElementById("text");
   const photos = document.getElementById("photos");
@@ -186,21 +186,29 @@ h1 {
       `;
     }
 
-    else if (step === 3) {
-      title.textContent = "🤍";
-      photos.innerHTML = "";
-      text.className = "closing";
-      text.textContent =
+   else if (step === 3) {
+  title.textContent = "🤍";
+  photos.innerHTML = "";
+  text.className = "closing";
+  text.textContent =
 "Have a great day on your day, sayang!\n\n" +
-"Once again, happy birthday 🤍\n" +
-"I love you.";
+"Once again, happy birthday 🤍";
 
-      releaseFlowers();
-      btn.style.display = "none";
-    }
+  releaseFlowers();
+  btn.textContent = "klik sekali lagi 🤍";
+}
+
+else if (step === 4) {
+  text.textContent =
+"and once more again,\nI love you my other half 🤍";
+
+  releaseFlowers();
+  btn.style.display = "none";
+}
 
     step++;
   });
 </script>
+
 
 
