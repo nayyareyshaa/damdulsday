@@ -83,7 +83,21 @@ h1 {
   line-height: 1.9;
   color: #1f4fd8;
 }
+    .flower {
+  position: fixed;
+  top: -50px;
+  font-size: 22px;
+  animation: fall linear forwards;
+  pointer-events: none;
+  z-index: 999;
+}
 
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
 
   </style>
 </head>
@@ -117,6 +131,23 @@ h1 {
     const music = document.getElementById("music");
 
     let step = 0;
+    function releaseFlowers() {
+  const flowers = ["🌸", "🌼", "🌺", "🤍"];
+  
+  for (let i = 0; i < 20; i++) {
+    const flower = document.createElement("div");
+    flower.className = "flower";
+    flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.animationDuration = 4 + Math.random() * 3 + "s";
+    document.body.appendChild(flower);
+
+    setTimeout(() => {
+      flower.remove();
+    }, 7000);
+  }
+}
+
 
     btn.addEventListener("click", () => {
 
@@ -162,6 +193,7 @@ h1 {
 "Have a great day on your day, sayang!\n\n" +
 "Once again, happy birthday 🤍\n" +
 "I love you.";
+       releaseFlower();
   btn.style.display = "none";
 }
 
@@ -171,6 +203,7 @@ h1 {
 
 </body>
 </html>
+
 
 
 
