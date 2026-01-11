@@ -124,101 +124,87 @@ h1 {
   </audio>
 
   <script>
-    const title = document.getElementById("title");
-    const text = document.getElementById("text");
-    const photos = document.getElementById("photos");
-    const btn = document.getElementById("nextBtn");
-    const music = document.getElementById("music");
+    <script>
+  const title = document.getElementById("title");
+  const text = document.getElementById("text");
+  const photos = document.getElementById("photos");
+  const btn = document.getElementById("nextBtn");
+  const music = document.getElementById("music");
 
-    let step = 0;
+  let step = 0;
     
-    function releaseFlowers() {
-     const flowers = ["🌸", "🌼", "🌺", "🤍"];
+  function releaseFlowers() {
+    const flowers = ["🌸", "🌼", "🌺", "🤍"];
   
-  for (let i = 0; i < 20; i++) {
-    const flower = document.createElement("div");
-    flower.className = "flower";
-    flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
-    flower.style.left = Math.random() * 100 + "vw";
-    flower.style.animationDuration = 6 + Math.random() * 4 + "s";
-    document.body.appendChild(flower);
+    for (let i = 0; i < 20; i++) {
+      const flower = document.createElement("div");
+      flower.className = "flower";
+      flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+      flower.style.left = Math.random() * 100 + "vw";
+      flower.style.animationDuration = 6 + Math.random() * 4 + "s";
+      document.body.appendChild(flower);
 
-    setTimeout(() => {
-      flower.remove();
-    }, 7000);
+      setTimeout(() => {
+        flower.remove();
+      }, 7000);
+    }
   }
-}
 
-    btn.addEventListener("click", () => {
+  btn.addEventListener("click", () => {
 
-      if (step === 0) {
-        music.play();
-        title.textContent = "Happy Birthday Sayangku 🤍";
-        text.textContent = "(klik sekali lagi ya)";
-      }
+    if (step === 0) {
+      music.play();
+      title.textContent = "Happy Birthday Sayangku 🤍";
+      text.textContent = "(klik sekali lagi ya)";
+    }
 
-      else if (step === 1) {
-       text.textContent =
+    else if (step === 1) {
+      text.textContent =
 "Semoga hari ini dan hari-hari setelahnya\n" +
 "selalu penuh bahagia, tawa, dan cinta.\n" +
 "I'll never change all my colors for u.\n" +
 "I love you a lot sayang. Together forever and ever ya, aamiin.\n" +
 "Hope u can feel my love from every breath u take.";
-        
-      }
+    }
 
-      else if (step === 2) {
-        title.textContent = "me with birthday boy 🤍";
-        text.textContent = "🤍";
-        photos.innerHTML = `
-          <div class="gallery">
-            <img src="foto1.jpg" class="foto">
-            <img src="foto2.jpg" class="foto">
-            <img src="foto3.jpg" class="foto">
-            <img src="foto4.jpg" class="foto">
-            <img src="foto5.jpg" class="foto">
-            <img src="foto6.jpg" class="foto">
-            <img src="foto7.jpg" class="foto">
-            <img src="foto8.jpg" class="foto">
-            <img src="foto9.jpg" class="foto">
-            <img src="foto10.jpg" class="foto">
-          </div>
-        `;
-      }
-     else if (step === 3) {
-  title.textContent = "🤍";
-  photos.innerHTML = "";
-  text.className = "closing";
-  text.textContent =
+    else if (step === 2) {
+      title.textContent = "me with birthday boy 🤍";
+      text.textContent = "🤍";
+      photos.innerHTML = `
+        <div class="gallery">
+          <img src="foto1.jpg" class="foto">
+          <img src="foto2.jpg" class="foto">
+          <img src="foto3.jpg" class="foto">
+          <img src="foto4.jpg" class="foto">
+          <img src="foto5.jpg" class="foto">
+          <img src="foto6.jpg" class="foto">
+          <img src="foto7.jpg" class="foto">
+          <img src="foto8.jpg" class="foto">
+          <img src="foto9.jpg" class="foto">
+          <img src="foto10.jpg" class="foto">
+        </div>
+      `;
+    }
+
+    else if (step === 3) {
+      title.textContent = "🤍";
+      photos.innerHTML = "";
+      text.className = "closing";
+      text.textContent =
 "Have a great day on your day, sayang!\n\n" +
 "Once again, happy birthday 🤍\n" +
 "I love you.";
-       
-      
-  releaseFlowers();
-  btn.textContent = "klik lagi 🤍";
-}
 
-else if (step === 4) {
-  releaseFlowers();
-  btn.style.display = "none";
-}
+      releaseFlowers();
+      btn.textContent = "klik lagi 🤍";
+    }
 
-      step++;
-    });
-  </script>
+    else if (step === 4) {
+      releaseFlowers();
+      btn.style.display = "none";
+    }
 
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
+    step++;
+  });
+</script>
 
