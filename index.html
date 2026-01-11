@@ -14,33 +14,32 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       text-align: center;
     }
 
     .card {
       background: white;
-      padding: 40px 30px;
+      padding: 35px 25px;
       border-radius: 20px;
-      max-width: 320px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.60);
-      animation: fadeIn 50s ease;
+      max-width: 360px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
     h1 {
       color: #1f4fd8;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     p {
       color: #333;
       font-size: 15px;
-      line-height: 1.5;
+      line-height: 1.7;
+      white-space: pre-line;
     }
 
     button {
-      margin-top: 20px;
-      padding: 14px 28px;
+      margin-top: 25px;
+      padding: 14px 30px;
       font-size: 16px;
       border: none;
       border-radius: 12px;
@@ -48,40 +47,28 @@
       color: white;
       cursor: pointer;
     }
-    gallery {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        margin-top: 20px;
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 20px;
     }
-    foto {
-        width: 100%;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgb(0,0,0,0.2);
-        animation: fadeFoto 1.5s ease forwards;
+
+    .foto {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
-    @keyframes fadeFoto {
-        from {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
   </style>
 </head>
 
 <body>
 
-  <div class="card" id="cover">
+  <div class="card" id="card">
     <h1>For Adam 💙</h1>
-    <p>
-      Buat kamu🤍<br>
-      Tap the button below
-    </p>
-    <button id="openBtn">Di Klik</button>
+    <p>Buat kamu 🤍<br>Klik pelan-pelan ya</p>
+    <button id="nextBtn">Klik</button>
   </div>
 
   <audio id="music">
@@ -89,49 +76,55 @@
   </audio>
 
   <script>
-    const btn = document.getElementById("openBtn");
-    const cover = document.getElementById("cover");
+    const card = document.getElementById("card");
+    const btn = document.getElementById("nextBtn");
     const music = document.getElementById("music");
 
+    let step = 0;
+
     btn.addEventListener("click", () => {
-      music.play();
+      if (step === 0) {
+        music.play();
+        card.innerHTML = `
+          <h1>Happy Birthday Sayangku 🤍</h1>
+          <p>(klik lagi ya)</p>
+          <button id="nextBtn">Klik</button>
+        `;
+      }
 
-      cover.innerHTML = `
-      <h1 id="typingTitle"></h1>
-      <p id="typingText"></p1>
-        <div class="gallery">
-             <img src="foto1.jpg" class="foto">
-             <img src="foto2.jpg" class="foto">
-             <img src="foto3.jpg" class="foto">
-             <img src="foto4.jpg" class="foto">
-             <img src="foto5.jpg" class="foto">
-             <img src="foto6.jpg" class="foto">
-             <img src="foto7.jpg" class="foto">
-             <img src="foto8.jpg" class="foto">
-             <img src="foto9.jpg" class="foto">
-             <img src="foto10.jpg" class="foto">
+      else if (step === 1) {
+        card.innerHTML = `
+          <p>
+Semoga hari ini dan hari-hari setelahnya
+selalu penuh bahagia, tawa, dan cinta.
+I'll never change all my colors for u.
+Aku buat ini di hari Minggu 11 Januari,
+maaf ya aku boong udah bobo padahal belum..
+Aku utak atik ini dan baru beres jam 3.00 HEHEHE
+I love you a lot sayang.
+Hope u can feel my love from every breath u take.
+          </p>
+          <button id="nextBtn">Klik</button>
+        `;
+      }
 
-      `;
-        const titleText = "Happy Birthday Sayangku, Selamat Ulang Tahun🤍";
-        
-        const bodyText = `
-          Semoga hari ini dan hari-hari setelahnya
-          selalu penuh bahagia, tawa, dan cinta.
-          I'll never change all my colors for u.
-          Aku buat ini di hari Minggu 11 Januari, maaf ya aku boong udah bobo padahal belum..
-          Aku utak atik ini dan baru beres nih di jam 3.00 HEHEHEHE
-          I love you a lot sayang.<br> Hope u can feel my love from every breath u take.
-         `;
+      else if (step === 2) {
+        card.innerHTML = `
+          <h1>Our Memories 🤍</h1>
+          <div class="gallery">
+            <img src="foto1.jpg" class="foto">
+            <img src="foto2.jpg" class="foto">
+            <img src="foto3.jpg" class="foto">
+            <img src="foto4.jpg" class="foto">
+            <img src="foto5.jpg" class="foto">
+            <img src="foto6.jpg" class="foto">
+          </div>
+        `;
+      }
 
+      step++;
+    });
   </script>
 
 </body>
-
 </html>
-
-
-
-
-
-
-
