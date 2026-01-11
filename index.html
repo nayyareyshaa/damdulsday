@@ -131,21 +131,23 @@ h1 {
     const music = document.getElementById("music");
 
     let step = 0;
+    
     function releaseFlowers() {
-  const flowers = ["🌸", "🌼", "🌺", "🤍"];
+     const flowers = ["🌸", "🌼", "🌺", "🤍"];
   
   for (let i = 0; i < 20; i++) {
     const flower = document.createElement("div");
     flower.className = "flower";
     flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
     flower.style.left = Math.random() * 100 + "vw";
-    flower.style.animationDuration = 4 + Math.random() * 3 + "s";
+    flower.style.animationDuration = 6 + Math.random() * 4 + "s";
     document.body.appendChild(flower);
 
     setTimeout(() => {
       flower.remove();
     }, 7000);
   }
+}
 
     btn.addEventListener("click", () => {
 
@@ -192,7 +194,7 @@ h1 {
 "Once again, happy birthday 🤍\n" +
 "I love you.";
        
-       releaseFlower();
+       releaseFlowers();
   btn.style.display = "none";
 }
 
@@ -202,6 +204,7 @@ h1 {
 
 </body>
 </html>
+
 
 
 
