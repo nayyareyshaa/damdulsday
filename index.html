@@ -98,6 +98,22 @@ h1 {
     opacity: 0;
   }
 }
+    .photo-card {
+  text-align: center;
+}
+
+.photo-card img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.caption {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #777;
+  font-style: italic;
+}
 
   </style>
 </head>
@@ -163,6 +179,7 @@ h1 {
 "Semoga hari ini dan hari-hari setelahnya\n" +
 "selalu penuh bahagia, tawa, dan cinta.\n" +
 "I'll never change all my colors for u.\n" +
+"Thank you for every ups and downs that we've been through and we can passed it.\n" +
 "I love you a lot sayang. Together forever and ever ya, aamiin.\n" +
 "Hope u can feel my love from every breath u take.";
     }
@@ -172,16 +189,27 @@ h1 {
       text.textContent = "🤍";
       photos.innerHTML = `
         <div class="gallery">
+        <div class="photo card">
           <img src="foto1.jpg" class="foto">
+          <p class="caption">ini kita lagi mam sushi tei pas kamu ada rezeki lebih</p>
           <img src="foto2.jpg" class="foto">
+          <p class="caption">ini pas pertama kali kita ke kondangan</p>
           <img src="foto3.jpg" class="foto">
+          <p class="caption">ini pas kita ngopag hehehe</p>
           <img src="foto4.jpg" class="foto">
+          <p class="caption">si ketek with his fav bike</p>
           <img src="foto5.jpg" class="foto">
+          <p class="caption">ini pas kita balikan...i love you</p>
           <img src="foto6.jpg" class="foto">
+          <p class="caption">ini pas kita coba foto di hndk hehehe. sambil memeluk si ketek </p>
           <img src="foto7.jpg" class="foto">
+          <p class="caption">ini kita udah ke yang berapa kali kondangan ya sayangg</p>
           <img src="foto8.jpg" class="foto">
+          <p class="caption">mine. foto fav aku</p>
           <img src="foto9.jpg" class="foto">
+          <p class="caption">ini juga after kondangann. banyak sekali.. semoga nnt bagian kita yang ngondang orang ya. aamiinn</p>
           <img src="foto10.jpg" class="foto">
+          <p class="caption">foto iseng ajaa tapi lucu yh</p>
         </div>
       `;
     }
@@ -209,6 +237,7 @@ else if (step === 4) {
     step++;
   });
 </script>
+
 
 
 
