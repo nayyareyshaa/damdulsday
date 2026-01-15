@@ -50,10 +50,16 @@
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
       margin-top: 20px;
     }
+    
+  .photo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
     .foto {
       width: 100%;
@@ -237,6 +243,7 @@ else if (step === 4) {
     step++;
   });
 </script>
+
 
 
 
